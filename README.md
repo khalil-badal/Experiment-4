@@ -16,7 +16,7 @@ import the libraries for pandas and numpy
 import pandas as pd
 import numpy as np
 ```
-# Load the Excel file
+Load the Excel file
 ```python
 df = pd.read_excel('board2.xlsx')
 ```
