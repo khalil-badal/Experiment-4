@@ -339,3 +339,6 @@ that gender did not affect the average grade as much.
 
 ### Authors
 #### Khalil Badal
+
+### Date
+#### September - 19 - 2024
