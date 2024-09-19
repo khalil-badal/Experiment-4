@@ -230,8 +230,8 @@ Display the plot
 plt.show()  
 ```
 ![Average Grades by Track](average_grades_by_track.png)
-##### The generated bar graph above shows that the Communication track had the highest average score, followed by the Microelectronics track. The Instrumentation
-##### track had the lowest average grade. From this, we can conclude that the chosen track contributed to the average score. 
+The generated bar graph above shows that the Communication track had the highest average score, followed by the Microelectronics track. The Instrumentation
+track had the lowest average grade. From this, we can conclude that the chosen track contributed to the average score. 
 
 
 ### Average Grades by Gender
@@ -280,7 +280,7 @@ Display the plot
 plt.show()
 ```
 ![Average Grades by Track](average_grades_by_gender.png)
-##### From the generated graph of the average grades of Male and Female examinees, we can tell that Male examinees had slightly better performance. 
+From the generated graph of the average grades of Male and Female examinees, we can tell that Male examinees had slightly better performance. 
 
 ### Average Grades by Hometown
 Box Plot by Hometown
@@ -330,12 +330,12 @@ Display the plot
 plt.show()
 ```
 ![Average Grades by Track](average_grades_by_hometown.png)
-##### The box plot indicates that Luzon had the highest average grade, as evidenced by its highest median. This is because Luzon had the most access to 
-##### educational resources. On the other hand,  Mindanao had the lowest average grade, reflected by its lower median and broader range of grades. Visayas falls in between, with moderate variability
-##### and a median higher than Mindanao but lower than Luzon.
+The box plot indicates that Luzon had the highest average grade, as evidenced by its highest median. This is because Luzon had the most access to 
+educational resources. On the other hand,  Mindanao had the lowest average grade, reflected by its lower median and broader range of grades. Visayas falls in between, with moderate variability
+and a median higher than Mindanao but lower than Luzon.
 
-##### From these graphs, we can conclude that the chosen track in college, and the hometown can affect the average grade of the examinees. We can also tell
-##### that gender did not affect the average grade as much. 
+From these graphs, we can conclude that the chosen track in college, and the hometown can affect the average grade of the examinees. We can also tell
+that gender did not affect the average grade as much. 
 
 ### Authors
 #### Khalil Badal
