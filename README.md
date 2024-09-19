@@ -144,7 +144,7 @@ Mindy
 
 ### 2.) Create a visualization that shows how the different features contributes to average grade. Does chosen track in college, gender, or hometown contributes to a higher average score?
 
-# import the python library for plotting 
+import the python library for plotting 
 ``` python
 import matplotlib.pyplot as plt
 ``` 
@@ -239,43 +239,43 @@ Create Bar Chart by Gender
 ``` python
 plt.figure(figsize=(10, 6))
 ```
-# Group data by 'Gender' and calculate the average grade
+Group data by 'Gender' and calculate the average grade
 ``` python
 gender_avg = df.groupby('Gender')['Average'].mean()
 ```
-# Plot the average grades with a bar chart
+Plot the average grades with a bar chart
 ``` python
 colors = ['pink', 'blue']  # define a list of colors
 ```
-# assign a color to each bar
+assign a color to each bar
 ``` python
 plt.bar(gender_avg.index, gender_avg.values, color=colors[0] if len(gender_avg) == 1 else colors)
 ```
-# Title of the plot
+Title of the plot
 ``` python
 plt.title('Average Grades by Gender')
 ```
-# X-axis label
+X-axis label
 ``` python
 plt.xlabel('Gender')
 ```
-# Y-axis label
+Y-axis label
 ``` python
 plt.ylabel('Average Grade')
 ``` 
-# Add grid lines for the y-axis
+Add grid lines for the y-axis
 ``` python
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 ``` 
-# Adjust layout to fit elements
+Adjust layout to fit elements
 ``` python
 plt.tight_layout()
 ``` 
-# Save the plot as an image file
+Save the plot as an image file
 ``` python
 plt.savefig('average_grades_by_gender.png')
 ```
-# Display the plot
+Display the plot
 ``` python
 plt.show()
 ```
@@ -324,9 +324,11 @@ plt.tight_layout()
 Save the plot as an image file
 ``` python
 plt.savefig('average_grades_by_hometown.png')  
-
-# Display the plot
+``` 
+Display the plot
+``` python
 plt.show()
+```
 ![Average Grades by Track](average_grades_by_hometown.png)
 ##### The box plot indicates that Luzon had the highest average grade, as evidenced by its highest median. This is because Luzon had the most access to 
 ##### educational resources. On the other hand,  Mindanao had the lowest average grade, reflected by its lower median and broader range of grades. Visayas falls in between, with moderate variability
