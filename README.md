@@ -20,7 +20,7 @@ Load the Excel file
 ```python
 df = pd.read_excel('board2.xlsx')
 ```
-! Print the dataframe
+Print the dataframe
 ```python
 df
 ```
@@ -64,11 +64,11 @@ Filter the DataFrame to include only students from Luzon who are in the 'Instrum
 ```python
 instru_filter = df[(df['Electronics'] > 70) & (df['Hometown'] == 'Luzon') & (df['Track'] == 'Instrumentation')]
 ```
-# Select only the 'Name', 'GEAS', and 'Electronics' columns from the filtered DataFrame
+Select only the 'Name', 'GEAS', and 'Electronics' columns from the filtered DataFrame
 ```python
 Instru = instru_filter[['Name', 'GEAS', 'Electronics']]
 ```
-# Display the resulting DataFrame with the filtered data
+Display the resulting DataFrame with the filtered data
 ```python
 Instru
 ```
@@ -226,8 +226,9 @@ Adjust layout to fit elements
 plt.tight_layout()
 ```
 Display the plot
+``` python
 plt.show()  
-
+```
 ![Average Grades by Track](average_grades_by_track.png)
 ##### The generated bar graph above shows that the Communication track had the highest average score, followed by the Microelectronics track. The Instrumentation
 ##### track had the lowest average grade. From this, we can conclude that the chosen track contributed to the average score. 
