@@ -235,62 +235,94 @@ plt.show()
 
 
 ### Average Grades by Gender
-# Create Bar Chart by Gender
+Create Bar Chart by Gender
+``` python
 plt.figure(figsize=(10, 6))
+```
 # Group data by 'Gender' and calculate the average grade
+``` python
 gender_avg = df.groupby('Gender')['Average'].mean()
+```
 # Plot the average grades with a bar chart
+``` python
 colors = ['pink', 'blue']  # define a list of colors
+```
 # assign a color to each bar
-plt.bar(gender_avg.index, gender_avg.values, color=colors[0] if len(gender_avg) == 1 else colors)  
+``` python
+plt.bar(gender_avg.index, gender_avg.values, color=colors[0] if len(gender_avg) == 1 else colors)
+```
 # Title of the plot
-plt.title('Average Grades by Gender')  
+``` python
+plt.title('Average Grades by Gender')
+```
 # X-axis label
-plt.xlabel('Gender')  
+``` python
+plt.xlabel('Gender')
+```
 # Y-axis label
-plt.ylabel('Average Grade')  
+``` python
+plt.ylabel('Average Grade')
+``` 
 # Add grid lines for the y-axis
-plt.grid(axis='y', linestyle='--', alpha=0.7) 
+``` python
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+``` 
 # Adjust layout to fit elements
-plt.tight_layout()  
+``` python
+plt.tight_layout()
+``` 
 # Save the plot as an image file
-plt.savefig('average_grades_by_gender.png')  
+``` python
+plt.savefig('average_grades_by_gender.png')
+```
 # Display the plot
-plt.show() 
+``` python
+plt.show()
+```
 ![Average Grades by Track](average_grades_by_gender.png)
 ##### From the generated graph of the average grades of Male and Female examinees, we can tell that Male examinees had slightly better performance. 
 
 ### Average Grades by Hometown
-# Box Plot by Hometown
-# Create a new figure with a specific size (12x6 inches)
+Box Plot by Hometown
+Create a new figure with a specific size (12x6 inches)
+``` python
 plt.figure(figsize=(12, 6))
-
-# Create a box plot for the 'Average' grades by 'Hometown'
-# Create a list of Series, each containing 'Average' grades for a unique 'Hometown'
-# Label each box plot with the corresponding 'Hometown'
+```
+Create a box plot for the 'Average' grades by 'Hometown'
+Create a list of Series, each containing 'Average' grades for a unique 'Hometown'
+Label each box plot with the corresponding 'Hometown'
+``` python
 plt.boxplot(
     [df[df['Hometown'] == hometown]['Average'] for hometown in df['Hometown'].unique()],
     labels=df['Hometown'].unique()
 )
-
-# Set the title of the plot
+``` 
+Set the title of the plot
+``` python
 plt.title('Distribution of Average Grades by Hometown')
-
-# Label the x-axis
+``` 
+Label the x-axis
+``` python
 plt.xlabel('Hometown')
-
-# Label the y-axis
+``` 
+Label the y-axis
+``` python
 plt.ylabel('Average Grade')
-
-# Rotate x-axis labels by 45 degrees for better readability
+``` 
+Rotate x-axis labels by 45 degrees for better readability
+``` python
 plt.xticks(rotation=45, ha='right')
-
-# Add a grid on the y-axis with dashed lines and 70% opacity
+``` 
+Add a grid on the y-axis with dashed lines and 70% opacity
+``` python
 plt.grid(axis='y', linestyle='--', alpha=0.7)
-
-# Adjust layout to fit all elements neatly within the figure
+``` 
+Adjust layout to fit all elements neatly within the figure
+``` python
 plt.tight_layout()
-# Save the plot as an image file
+``` 
+Save the plot as an image file
+``` python
 plt.savefig('average_grades_by_hometown.png')  
 
 # Display the plot
