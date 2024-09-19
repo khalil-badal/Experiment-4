@@ -192,5 +192,5 @@ plt.tight_layout()
 # Display the plot
 plt.show()  
 
-![Average Grades by Track](images/average_grades_by_track.png)
+![Average Grades by Track](Experiment-4/average_grades_by_track.png)
 
