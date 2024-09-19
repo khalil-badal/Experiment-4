@@ -10,15 +10,20 @@
 
 ### 1.) Create the following data frames based on the format provided:
 
-# import the libraries for pandas and numpy
+```
+import the libraries for pandas and numpy
+```python
 import pandas as pd
 import numpy as np
-
+```
 # Load the Excel file
+```python
 df = pd.read_excel('board2.xlsx')
-# Print the dataframe
+```
+Print the dataframe
+```python
 df
-
+```
 ### Examinee Grades DataFrame
 |   | Name | Gender | Track           | Hometown | Math | Electronics | GEAS | Communication |
 |---|------|--------|-----------------|----------|------|-------------|------|---------------|
@@ -55,15 +60,18 @@ df
 
 
 ### a.) 
-# Filter the DataFrame to include only students from Luzon who are in the 'Instrumentation' track and have an 'Electronics' grade greater than 70
+Filter the DataFrame to include only students from Luzon who are in the 'Instrumentation' track and have an 'Electronics' grade greater than 70
+```python
 instru_filter = df[(df['Electronics'] > 70) & (df['Hometown'] == 'Luzon') & (df['Track'] == 'Instrumentation')]
-
+```
 # Select only the 'Name', 'GEAS', and 'Electronics' columns from the filtered DataFrame
+```python
 Instru = instru_filter[['Name', 'GEAS', 'Electronics']]
-
+```
 # Display the resulting DataFrame with the filtered data
+```python
 Instru
-
+```
 |   | Name | GEAS | Electronics |
 |---|------|------|-------------|
 | 0 | S1   | 75   | 89          |
@@ -71,11 +79,15 @@ Instru
 | 29| S30  | 57   | 81          |
 
 ### b.)
-# Calculate the average grade across 'Math', 'Electronics', 'GEAS', and 'Communication' for each student and store the result in a new column 'Average'
+Calculate the average grade across 'Math', 'Electronics', 'GEAS', and 'Communication' for each student and store the result in a new column 'Average'
+```python
 df['Average'] = np.mean(df[['Math', 'Electronics', 'GEAS', 'Communication']], axis=1)
-# Display the DataFrame with the newly added 'Average' column
+```
+Display the DataFrame with the newly added 'Average' column
+```python
 df
 
+```
 ### Examinee Grades DataFrame
 |   | Name | Gender | Track           | Hometown | Math | Electronics | GEAS | Communication | Average |
 |---|------|--------|-----------------|----------|------|-------------|------|---------------|---------|
@@ -110,14 +122,18 @@ df
 | 28| S29  | Male   | Instrumentation | Mindanao | 73   | 48          | 71   | 62            | 63.50   |
 | 29| S30  | Male   | Instrumentation | Luzon    | 78   | 81          | 57   | 56            | 68.00   |
 
+``` python
 # Filter the DataFrame to include only female students from Luzon who have an average grade of 55 or higher
 mindy_filter = df[(df['Average'] >= 55) & (df['Hometown'] == 'Luzon') & (df['Gender'] == 'Female')]
-
-# Select only the 'Name', 'Track', 'Electronics', and 'Average' columns from the filtered DataFrame
+```
+Select only the 'Name', 'Track', 'Electronics', and 'Average' columns from the filtered DataFrame
+``` python
 Mindy = mindy_filter[['Name', 'Track', 'Electronics', 'Average']]
-
-# Display the resulting DataFrame with the filtered data
+```
+Display the resulting DataFrame with the filtered data
+``` python
 Mindy
+``` 
 
 |   | Name | Track           | Electronics | Average |
 |---|------|-----------------|--------------|---------|
@@ -129,9 +145,10 @@ Mindy
 ### 2.) Create a visualization that shows how the different features contributes to average grade. Does chosen track in college, gender, or hometown contributes to a higher average score?
 
 # import the python library for plotting 
+``` python
 import matplotlib.pyplot as plt
-
-# display the dataframe to serve as reference 
+``` 
+display the dataframe to serve as reference 
 ### Examinee Grades DataFrame
 |   | Name | Gender | Track           | Hometown | Math | Electronics | GEAS | Communication | Average |
 |---|------|--------|-----------------|----------|------|-------------|------|---------------|---------|
@@ -167,30 +184,123 @@ import matplotlib.pyplot as plt
 | 29| S30  | Male   | Instrumentation | Luzon    | 78   | 81          | 57   | 56            | 68.00   |
 
 ### Average Grades by Track
-# Create Bar Chart by Track
+Create Bar Chart by Track
+``` python
 plt.figure(figsize=(12, 6))
+```
 # Group data by 'Track' and calculate the average grade
+``` python
 track_avg = df.groupby('Track')['Average'].mean()
-# Define a list of colors for the bars
-colors = ['yellow', 'purple', 'green']  
-# Plot each track's average grade with a unique color
+```
+Define a list of colors for the bars
+``` python
+colors = ['yellow', 'purple', 'green']
+```
+Plot each track's average grade with a unique color
 for i, (track, avg) in enumerate(zip(track_avg.index, track_avg.values)):
      # Assign a color to each bar based on index
     plt.bar(track, avg, color=colors[i % len(colors)]) 
-# Title of the plot
+    ```
+Title of the plot
+``` python
+```
 plt.title('Average Grades by Track')
-# X-axis label
-plt.xlabel('Track')  
-# Y-axis label
-plt.ylabel('Average Grade')  
-# Rotate x-axis labels for readability
-plt.xticks(rotation=45, ha='right')  
-# Add grid lines for the y-axis
-plt.grid(axis='y', linestyle='--', alpha=0.7)  
-# Adjust layout to fit elements
-plt.tight_layout()  
-# Display the plot
+X-axis label
+``` python
+plt.xlabel('Track')
+``` 
+Y-axis label
+``` python
+plt.ylabel('Average Grade')
+``` 
+Rotate x-axis labels for readability
+``` python
+plt.xticks(rotation=45, ha='right')
+```
+Add grid lines for the y-axis
+``` python
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+```
+Adjust layout to fit elements
+``` python
+plt.tight_layout()
+```
+Display the plot
 plt.show()  
 
 ![Average Grades by Track](average_grades_by_track.png)
+##### The generated bar graph above shows that the Communication track had the highest average score, followed by the Microelectronics track. The Instrumentation
+##### track had the lowest average grade. From this, we can conclude that the chosen track contributed to the average score. 
 
+
+### Average Grades by Gender
+# Create Bar Chart by Gender
+plt.figure(figsize=(10, 6))
+# Group data by 'Gender' and calculate the average grade
+gender_avg = df.groupby('Gender')['Average'].mean()
+# Plot the average grades with a bar chart
+colors = ['pink', 'blue']  # define a list of colors
+# assign a color to each bar
+plt.bar(gender_avg.index, gender_avg.values, color=colors[0] if len(gender_avg) == 1 else colors)  
+# Title of the plot
+plt.title('Average Grades by Gender')  
+# X-axis label
+plt.xlabel('Gender')  
+# Y-axis label
+plt.ylabel('Average Grade')  
+# Add grid lines for the y-axis
+plt.grid(axis='y', linestyle='--', alpha=0.7) 
+# Adjust layout to fit elements
+plt.tight_layout()  
+# Save the plot as an image file
+plt.savefig('average_grades_by_gender.png')  
+# Display the plot
+plt.show() 
+![Average Grades by Track](average_grades_by_gender.png)
+##### From the generated graph of the average grades of Male and Female examinees, we can tell that Male examinees had slightly better performance. 
+
+### Average Grades by Hometown
+# Box Plot by Hometown
+# Create a new figure with a specific size (12x6 inches)
+plt.figure(figsize=(12, 6))
+
+# Create a box plot for the 'Average' grades by 'Hometown'
+# Create a list of Series, each containing 'Average' grades for a unique 'Hometown'
+# Label each box plot with the corresponding 'Hometown'
+plt.boxplot(
+    [df[df['Hometown'] == hometown]['Average'] for hometown in df['Hometown'].unique()],
+    labels=df['Hometown'].unique()
+)
+
+# Set the title of the plot
+plt.title('Distribution of Average Grades by Hometown')
+
+# Label the x-axis
+plt.xlabel('Hometown')
+
+# Label the y-axis
+plt.ylabel('Average Grade')
+
+# Rotate x-axis labels by 45 degrees for better readability
+plt.xticks(rotation=45, ha='right')
+
+# Add a grid on the y-axis with dashed lines and 70% opacity
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Adjust layout to fit all elements neatly within the figure
+plt.tight_layout()
+# Save the plot as an image file
+plt.savefig('average_grades_by_hometown.png')  
+
+# Display the plot
+plt.show()
+![Average Grades by Track](average_grades_by_hometown.png)
+##### The box plot indicates that Luzon had the highest average grade, as evidenced by its highest median. This is because Luzon had the most access to 
+##### educational resources. On the other hand,  Mindanao had the lowest average grade, reflected by its lower median and broader range of grades. Visayas falls in between, with moderate variability
+##### and a median higher than Mindanao but lower than Luzon.
+
+##### From these graphs, we can conclude that the chosen track in college, and the hometown can affect the average grade of the examinees. We can also tell
+##### that gender did not affect the average grade as much. 
+
+### Authors
+#### Khalil Badal
