@@ -1,5 +1,5 @@
-**## EXPERIMENT 4**
-**### DATA WRANGLING AND DATA VISUALIZATION**
+## EXPERIMENT 4
+### DATA WRANGLING AND DATA VISUALIZATION**
 
 ### II. Instructions:
 #### Download the ECE Board Exam 2 dataset found on this link: bit.ly/ECEBoardExamDataset and write a
@@ -59,7 +59,7 @@ df
 | 29| S30  | Male   | Instrumentation | Luzon    | 78   | 81          | 57   | 56            |
 
 
-### **a.) **
+### a.) 
 Filter the DataFrame to include only students from Luzon who are in the 'Instrumentation' track and have an 'Electronics' grade greater than 70
 ```python
 instru_filter = df[(df['Electronics'] > 70) & (df['Hometown'] == 'Luzon') & (df['Track'] == 'Instrumentation')]
@@ -78,7 +78,7 @@ Instru
 | 7 | S8   | 64   | 81          |
 | 29| S30  | 57   | 81          |
 
-### **b.)**
+### b.)
 Calculate the average grade across 'Math', 'Electronics', 'GEAS', and 'Communication' for each student and store the result in a new column 'Average'
 ```python
 df['Average'] = np.mean(df[['Math', 'Electronics', 'GEAS', 'Communication']], axis=1)
