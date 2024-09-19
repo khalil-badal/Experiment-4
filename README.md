@@ -1,5 +1,5 @@
 ## EXPERIMENT 4
-### DATA WRANGLING AND DATA VISUALIZATION**
+### DATA WRANGLING AND DATA VISUALIZATION
 
 ### II. Instructions:
 #### Download the ECE Board Exam 2 dataset found on this link: bit.ly/ECEBoardExamDataset and write a
