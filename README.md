@@ -15,7 +15,7 @@
 
 ### 1.) Create the following data frames based on the format provided:
 
-import the libraries for pandas and numpy
+Import the libraries for pandas and numpy
 ```python
 import pandas as pd
 import numpy as np
