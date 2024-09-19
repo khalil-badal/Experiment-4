@@ -20,7 +20,7 @@ Load the Excel file
 ```python
 df = pd.read_excel('board2.xlsx')
 ```
-Print the dataframe
+! Print the dataframe
 ```python
 df
 ```
@@ -123,7 +123,7 @@ df
 | 29| S30  | Male   | Instrumentation | Luzon    | 78   | 81          | 57   | 56            | 68.00   |
 
 ``` python
-# Filter the DataFrame to include only female students from Luzon who have an average grade of 55 or higher
+Filter the DataFrame to include only female students from Luzon who have an average grade of 55 or higher
 mindy_filter = df[(df['Average'] >= 55) & (df['Hometown'] == 'Luzon') & (df['Gender'] == 'Female')]
 ```
 Select only the 'Name', 'Track', 'Electronics', and 'Average' columns from the filtered DataFrame
